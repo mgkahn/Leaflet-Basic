@@ -1,5 +1,10 @@
-/downloaded library
-/FileLayer
-/leaflet Routing Machine
-*.pdf
-citylots*
+**/.DS_Store
+.DS_Store
+**/*.fdb
+**/*.fbk
+**/*.deb
+**/*.zip
+**/*.tar.gz
+**.*.code-workspace
+*.code-workspace
+

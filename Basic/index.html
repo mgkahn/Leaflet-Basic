@@ -45,14 +45,14 @@
 
 <!-- leaflet js  -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="./data/point.js"></script>
-<script src="./data/line.js"></script>
-<script src="./data/polygon.js"></script>
+// <script src="./data/point.js"></script>
+// <script src="./data/line.js"></script>
+// <script src="./data/polygon.js"></script>
 
 
 <script>
     // Map initialization 
-    var map = L.map('map').setView([28.3949, 84.1240], 8);
+    var map = L.map('map').setView([-39.0572, 174.0794], 13  );
 
 
 
@@ -110,15 +110,21 @@
     /*==============================================
                         MARKER
     ================================================*/
-    var myIcon = L.icon({
+    var redIcon = L.icon({
         iconUrl: 'img/red_marker.png',
         iconSize: [40, 40],
     });
-    var singleMarker = L.marker([28.3949, 84.1240], { icon: myIcon, draggable: true });
-    var popup = singleMarker.bindPopup('This is the Nepal. ' + singleMarker.getLatLng()).openPopup()
+    var blackIcon = L.icon({
+        iconUrl: 'img/black_marker.png',
+        iconSize: [40, 40],
+    });
+    var singleMarker = L.marker([-39.05068221747875,174.0992828722834], { icon: redIcon, draggable: true });
+    var popup = singleMarker.bindPopup('This is 4 Payntners. ' + singleMarker.getLatLng()).openPopup()
     popup.addTo(map);
 
-    var secondMarker = L.marker([29.3949, 83.1240], { icon: myIcon, draggable: true });
+    var secondMarker = L.marker([-39.0217179137621,174.1423915838823], { icon: blackIcon, draggable: true });
+    var secondpopup = secondMarker.bindPopup('This is 1 Parkvue Drive. ' + secondMarker.getLatLng()).openPopup()
+    secondpopup.addTo(map);
 
     console.log(singleMarker.toGeoJSON())
 
@@ -154,10 +160,10 @@
     var overlayMaps = {
         "First Marker": singleMarker,
         'Second Marker': secondMarker,
-        'Point Data': pointData,
-        'Line Data': lineData,
-        'Polygon Data': polygonData,
-        'wms': wms
+//        'Point Data': pointData,
+//        'Line Data': lineData,
+//        'Polygon Data': polygonData,
+//        'wms': wms
     };
     // map.removeLayer(singleMarker)
 
